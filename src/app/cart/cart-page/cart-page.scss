@@ -1,0 +1,104 @@
+.cart-page {
+  padding: 2rem;
+
+  &__title {
+    font-size: 2rem;
+    margin: 0 0 0.5rem;
+  }
+
+  &__sum {
+    margin: 0 0 1.5rem;
+    color: var(--mat-sys-on-surface-variant);
+  }
+
+  &__total {
+    margin: 1.5rem 0 0;
+    text-align: right;
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+}
+
+.cart-content {
+  display: grid;
+  grid-template-columns: 1fr auto auto auto auto;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--mat-sys-outline-variant);
+
+  p {
+    margin: 0;
+  }
+
+  &__name {
+    font-weight: 600;
+  }
+
+  &__quantity {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  &__qty {
+    min-width: 2ch;
+    text-align: center;
+  }
+
+  &__subtotal {
+    min-width: 5rem;
+    text-align: right;
+    font-weight: 600;
+  }
+
+  &__btn {
+    padding: 0.5rem 1rem;
+    border: 0;
+    border-radius: 8px;
+    background: var(--mat-sys-surface-container);
+    color: inherit;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    &:hover {
+      background-color: rgb(188, 184, 184);
+      transition: all 0.3s;
+    }
+
+    &--delete {
+      background: transparent;
+      color: var(--mat-sys-error);
+      &:hover {
+        transition: all 0.3s;
+        background-color: var(--mat-sys-surface-container);
+      }
+    }
+  }
+}
+
+.cart-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 4rem 1rem;
+  text-align: center;
+
+  &__icon {
+    width: 4rem;
+    height: 4rem;
+    font-size: 4rem;
+    color: var(--mat-sys-outline);
+  }
+
+  &__title {
+    margin: 0;
+    font: var(--mat-sys-headline-small);
+  }
+
+  &__text {
+    margin: 0 0 1rem;
+    color: var(--mat-sys-on-surface-variant);
+  }
+}

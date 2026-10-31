@@ -1,0 +1,22 @@
+<section class="product-page">
+  <a routerLink="/products">← Back to products</a>
+  @if (loading()) {
+    <p role="status">Loading...</p>
+  } @else if (error()) {
+    <p role="alert">{{ error() }}</p>
+  } @else if (product(); as currentProduct) {
+    <h1 class="product-page__title">{{ currentProduct.name }}</h1>
+
+    <p class="product-page__description">
+      {{ currentProduct.description }}
+    </p>
+
+    <p class="product-page__price">
+      {{ currentProduct.price | currency }}
+    </p>
+
+    <button matButton="filled" (click)="addToCart()">Add to Cart</button>
+  } @else {
+    <p>Product not found in the loaded list.</p>
+  }
+</section>

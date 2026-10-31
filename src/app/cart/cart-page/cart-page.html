@@ -1,0 +1,52 @@
+<div class="cart-page">
+  <h1 class="cart-page__title">Cart</h1>
+  <p class="cart-page__sum">Items in cart: {{ cartService.totalItems() }}</p>
+
+  @if (cartService.items().length > 0) {
+    @for (item of cartService.items(); track item.product.id) {
+      <div class="cart-content">
+        <p class="cart-content__name">{{ item.product.name }}</p>
+
+        <p class="cart-content__price">{{ item.product.price | currency }}</p>
+
+        <div class="cart-content__quantity">
+          <button
+            aria-label="Decrease quantity"
+            class="cart-content__btn cart-content__btn--decrease"
+            (click)="cartService.decrease(item.product.id)"
+          >
+            -
+          </button>
+          <span class="cart-content__qty">{{ item.quantity }}</span>
+          <button
+            aria-label="Increase quantity"
+            class="cart-content__btn cart-content__btn--increase"
+            (click)="cartService.increase(item.product.id)"
+          >
+            +
+          </button>
+        </div>
+
+        <p class="cart-content__subtotal">
+          {{ item.product.price * item.quantity | currency }}
+        </p>
+
+        <button
+          class="cart-content__btn cart-content__btn--delete"
+          (click)="cartService.removeFromCart(item.product.id)"
+        >
+          Delete
+        </button>
+      </div>
+    }
+
+    <p class="cart-page__total">Total: {{ cartService.totalPrice() | currency }}</p>
+  } @else {
+    <div class="cart-empty">
+      <mat-icon class="cart-empty__icon" aria-hidden="true" fontIcon="shopping_cart"></mat-icon>
+      <h2 class="cart-empty__title">Your cart is empty</h2>
+      <p class="cart-empty__text">Looks like you haven't added anything yet.</p>
+      <a matButton="filled" routerLink="/products">Back to products</a>
+    </div>
+  }
+</div>

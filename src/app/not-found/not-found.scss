@@ -1,0 +1,32 @@
+.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 64px 16px;
+  text-align: center;
+  &__icon {
+    height: 4rem;
+    width: 4rem;
+    font-size: 3rem;
+  }
+  &__title {
+    margin: 0;
+    font-size: 4rem;
+  }
+  &__text {
+    margin: 0 0 16px;
+    color: var(--mat-sys-on-surface-variant);
+  }
+  &__link {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--mat-sys-on-surface-variant);
+    &:hover,
+    &:focus-visible {
+      color: var(--mat-sys-primary);
+      text-decoration: underline;
+    }
+  }
+}

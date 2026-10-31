@@ -1,0 +1,21 @@
+<mat-toolbar class="main-header">
+  <button matButton routerLink="/products">
+    <mat-icon class="main-icon" aria-hidden="false" aria-label="Home" fontIcon="store"></mat-icon>
+  </button>
+
+  <span class="branding">SmartShop</span>
+
+  <span class="spacer"></span>
+
+  <button matButton routerLink="/products">Products</button>
+
+  <button matButton routerLink="/cart">
+    <mat-icon
+      [matBadge]="cartService.totalItems()"
+      [matBadgeHidden]="cartService.totalItems() === 0"
+      aria-hidden="false"
+      aria-label="Cart"
+      fontIcon="shopping_cart"
+    ></mat-icon>
+  </button>
+</mat-toolbar>

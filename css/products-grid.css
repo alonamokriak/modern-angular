@@ -1,0 +1,76 @@
+.products-container {
+  padding: 16px;
+  display: grid;
+  gap: 1rem;
+}
+
+.products-total {
+  font-weight: 600;
+  font-size: clamp(16px, 2vw, 32px);
+}
+
+.search-field {
+  display: block;
+  width: 100%;
+}
+
+.search-preview {
+  margin: 0;
+  color: var(--mat-sys-on-surface-variant);
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+.empty-state {
+  grid-column: 1/-1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 4rem 2 rem;
+  text-align: center;
+}
+.empty-state mat-icon {
+  font-size: 4rem;
+  width: 4rem;
+  height: 4rem;
+  color: var(--mat-sys-outline);
+  margin-bottom: 1rem;
+}
+.empty-state h3 {
+  margin: 0 0 0.5rem;
+  color: var(--mat-sys-on-surface);
+}
+.empty-state p {
+  margin: 0;
+  color: var(--mat-sys-on-surface-variant);
+}
+
+.demo-item.even-row {
+  background: color-mix(in srgb, var(--mat-sys-primary) 6%, transparent);
+}
+
+.demo-item.odd-row {
+  background: color-mix(in srgb, var(--mat-sys-outline) 6%, transparent);
+}
+
+.demo-item.first-item {
+  outline: 2px solid var(--mat-sys-primary);
+}
+
+.demo-item.last-item {
+  outline: 2px dashed var(--mat-sys-outline);
+}
