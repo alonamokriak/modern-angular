@@ -58,4 +58,5 @@ export class ProductService {
 
   private readonly errorState = signal<string | null>(null);
   readonly error = this.errorState.asReadonly();
+  readonly sortOrder = signal<'asc' | 'desc'>('asc');
 }

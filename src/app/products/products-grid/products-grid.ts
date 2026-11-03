@@ -35,6 +35,17 @@ export class ProductsGrid {
     );
   });
 
+  protected readonly sortOrder = this.productService.sortOrder;
+
+  protected readonly sortedProducts = computed(() => {
+    const products = [...this.filteredProducts()];
+
+    if (this.sortOrder() === 'asc') {
+      return products.sort((a, b) => a.price - b.price);
+    }
+    return products.sort((a, b) => b.price - a.price);
+  });
+
   protected onAddToCart(product: Product) {
     this.cartService.addToCart(product);
   }
